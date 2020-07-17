@@ -1,0 +1,14 @@
+# Aimed to expose pods to the world
+apiVersion: v1
+kind: Service
+metadata:
+  name: posts-cluster-srv
+spec:
+  type: NodePort
+  selector:
+    app: posts # which pod is going to apply to
+  ports:
+    - name: posts-cluster
+      protocol: TCP
+      port: 4000 # service port
+      targetPort: 4000 # Port in our running application
