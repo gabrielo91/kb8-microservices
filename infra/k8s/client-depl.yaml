@@ -21,7 +21,6 @@ kind: Service
 metadata:
   name: client-srv
 spec:
-  type: ClusterIP
   selector:
     app: client # which pod is going to apply to
   ports:
